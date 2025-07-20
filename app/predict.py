@@ -9,7 +9,7 @@ st.set_page_config(layout="wide")
 st.title("🛒 Product Purchase Prediction: Model Comparison")
 
 # Load models
-base_path = "D:/product_purchase_prediction/model"
+base_path = os.path.dirname(__file__)
 logistic_model = pickle.load(open(os.path.join(base_path, "logistic_model.pkl"), "rb"))
 tree_model = pickle.load(open(os.path.join(base_path, "decision_tree_model.pkl"), "rb"))
 
