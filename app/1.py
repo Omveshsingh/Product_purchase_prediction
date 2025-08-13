@@ -14,7 +14,8 @@ model_options = {
 selected_model = st.selectbox("Choose Model", list(model_options.keys()))
 
 # Load selected model
-model_path = os.path.join(r"D:\product_purchase_prediction\model", model_options[selected_model])
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Go up to project root
+model_path = os.path.join(base_dir, "model", model_options[selected_model])
 model = pickle.load(open(model_path, "rb"))
 
 # Input fields
