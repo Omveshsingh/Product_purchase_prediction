@@ -8,14 +8,13 @@ st.title("Product Purchase Predictor")
 # Model selection
 model_options = {
     "Decision Tree": "decision_tree_model.pkl",
-    "Logistic Regression": "logistic_model.pkl",
-    "Random Forest Classifier": "random_forest_model.pkl"
+    "Logistic Regression": "logistic_model.pkl"
 }
 
 selected_model = st.selectbox("Choose Model", list(model_options.keys()))
 
 # Load selected model
-model_path = os.path.join("D:\product_purchase_prediction\model", model_options[selected_model])
+model_path = os.path.join(r"D:\product_purchase_prediction\model", model_options[selected_model])
 model = pickle.load(open(model_path, "rb"))
 
 # Input fields
